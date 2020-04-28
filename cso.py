@@ -5,7 +5,7 @@ import random as r
 def evaluate(a):
     return m.sin(a[0])+m.cos(a[1])
 
-class swarm:
+class Swarm:
     def __init__(self,a):
         self.pop=a
         self.vel=[r.uniform(l1,r1),r.uniform(l2,r2)]
@@ -35,15 +35,15 @@ def get_gbest(pop,list_pso):
     return pop[gbest].get_pop()
 
 def initalise_pop(l1,r1,l2,r2):
-    pop={}
+    pop = {}
     for i in range(50):
-        pop[i+1]=swarm([r.uniform(l1,r1),r.uniform(l2,r2)])
+        pop[i+1] = Swarm([r.uniform(l1,r1),r.uniform(l2,r2)])
     return pop
 
 def get_rand_list():
-    pso=[]
-    count=0
-    while count<10:
+    pso = []
+    count = 0
+    while count < 10:
         ra=r.randint(1,50)
         if ra in pso:
             continue
